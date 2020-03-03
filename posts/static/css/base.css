@@ -1,0 +1,87 @@
+h1{
+	color:red;
+}
+
+body {
+    font-family: 微軟正黑體, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color:#000;
+}
+.container {
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 1200px;
+}
+
+.casenumber_field th{
+	border: 1px solid #000;
+    background-color: #ffe699;
+    margin: 0px;
+    padding: 0px;
+}
+
+.casenumber_field td {
+    margin: 0px;
+    padding: 0px;
+}
+.address_field th{
+	background-color: #ffe699;
+	margin: 0px;
+	padding: 0px;
+}
+
+.address_field td{
+	margin: 0px;
+	padding: 0px;
+}
+
+.land_field {
+    background: #ffffff;
+    width: 750px;
+    float: left;
+}
+
+.land_field th {
+	background-color: #c6e0b4;
+	margin: 0px;
+	padding: 0px;
+}
+
+.x222222{
+	background-color: #c6e0b4;
+}
+
+.totoalarea_field {
+	border:#000000 2px solid;
+    background: #ffffff;
+    width: 350px;
+    float: left;
+    margin-left: 10px;
+}
+
+.totoalarea_field th{
+	margin: 0px;
+	padding: 0px;
+}
+
+.x333333 {
+    background: #bdd7ee;
+}
+
+.build_field th {
+	background-color: #bdd7ee;
+	margin: 0px;
+	padding: 0px;
+}
+
+.auction_information_field th {
+	background-color: #FAF0E6;
+}
+
+.attachment_field th {
+	background-color: #FFDAB9;
+}
+
+.final_judgment_field th{
+	background-color: #D8BFD8;
+}

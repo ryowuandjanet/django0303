@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block head_list %}
+	{{object_list}}
+{% endblock head_list %}
+{% block content %}
+	<h1>{{title}}</h1>
+	<table class="table">
+		<thead class="thead-dark">
+			<th>案號</th>
+			<th>住址</th>
+			<th>拍賣日</th>
+			<th>拍賣次數</th>
+			<th>底價</th>
+			<th>保証金</th>
+			<th>債務人</th>
+			<th>債權人</th>
+			<th>項目 <a href="create/" class="btn btn-warning btn-sm">新增</a></th>
+		</thead>
+		<tbody>
+			{% for obj in object_list %}
+			<tr>
+				<td>{{obj.casenumber}}</td>
+				<td>{{obj.address}}</td>
+				<td>{{obj.auctionday}}</td>
+				<td>{{obj.auctionlevel}}</td>
+				<td>{{obj.floorprice}}</td>
+				<td>{{obj.margin}}</td>
+				<td>{{obj.creditor}}</td>
+				<td>{{obj.debtor}}</td>
+				<td>
+					<a href="{{ obj.get_absolute_url}}" class="btn btn-primary btn-sm">查看</a>
+					<a href="{{path}}{{obj.id}}/edit/" class="btn btn-success btn-sm">更新</a>
+					<a href="{{path}}{{obj.id}}/delete/" class="btn btn-danger btn-sm">刪除</a>
+				</td>
+			</tr>
+			{% endfor %}	
+		</tbody>
+	</table>
+{% endblock content %}

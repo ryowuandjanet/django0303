@@ -1,0 +1,438 @@
+{% extends "base.html" %}
+{% block head_list %}
+{{title}}
+{% endblock head_list %}
+{% block content %}
+<h1>{{title}} YF評量表</h1>
+<div class="casenumber_field">
+    <table class="table">
+        <tr>
+            <th>案號</th>
+            <td>{{instance.casenumber}}</td>
+            <th>債務人</th>
+            <td>{{instance.creditor}}</td>
+            <th>債權人</th>
+            <td>{{instance.debtor}}</td>
+        </tr>
+    </table>
+</div>
+<div class="address_field">
+    <table class="table">
+        <tr>
+            <th>地址</th>
+            <td>{{instance.address}}</td>
+        </tr>
+    </table>
+</div>
+<div class="land_field">
+    <table class="table">
+        <tr>
+            <th>地號</th>
+            <th>地號謄本</th>
+            <th>地坪(面積)<br>平方公尺(坪)</th>
+            <th>地坪持分</th>
+            <th>地坪(持分)<br>平方公尺(坪)</th>
+        </tr>
+        <tr>
+            <td>landnumber</td>
+            <td>landurl</td>
+            <td>landarea</td>
+            <td>holdingpoint</td>
+            <td>計算欄</td>
+        </tr>
+    </table>
+</div>
+<div class="totoalarea_field">
+    <table class="table">
+        <tr>
+            <th class="x222222">地坪個人持分(面積)<br>平方公尺(坪)</th>
+            <th class="x333333">建坪個人持分(面積)<br>平方公尺(坪)</th>
+        </tr>
+        <tr>
+            <td>計算欄</td>
+            <td>計算欄</td>
+        </tr>
+    </table>
+</div>
+<div class="build_field">
+    <table class="table">
+        <tr>
+            <th>建號</th>
+            <th>建號謄本</th>
+            <th>建坪(面積)<br>平方公尺(坪)</th>
+            <th>建坪持分</th>
+            <th>建坪(持分)<br>平方公尺(坪)</th>
+        </tr>
+        <tr>
+            <td>buildnumber</td>
+            <td>buildurl</td>
+            <td>buildarea</td>
+            <td>buildholdingpoint</td>
+            <td>計算欄</td>
+        </tr>
+    </table>
+</div>
+<div class="auction_information_field">
+    <table class="table">
+        <tr>
+            <th>拍賣日</th>
+            <th colspan="4">拍別(各拍入場CP值</th>
+            <th>底價</th>
+            <th>坪價</th>
+            <th>時價</th>
+            <th>CP值</th>
+            <th>點閱</th>
+            <th>監控</th>
+            <th>建議加價</th>
+            <th>保証金</th>
+            <th>備註</th>
+        </tr>
+        <!-- 第一拍 -->
+        <tr>
+            {% if pass %}
+            <!-- 拍別：第一拍 -->
+            <td></td>
+            <th>第一拍</th>
+            <th>0.92</th>
+            <th>1.15</th>
+            <th>1.44</th>
+            <!-- 第一拍：底價 -->
+            <td>
+            </td>
+            <!-- 第一拍：坪價 -->
+            <td>
+            </td>
+            <!-- 第一拍：時價 -->
+            <td>
+            </td>
+            <!-- 第一拍：CP值 -->
+            <td>
+            </td>
+            <!-- 第一拍：點閱 -->
+            <td>
+            </td>
+            <!-- 第一拍：監控 -->
+            <td>
+            </td>
+            <!-- 第一拍：建議加價 -->
+            <td>
+            </td>
+            <!-- 第一拍：保証金 -->
+            <td>
+            </td>
+            <!-- 第一拍：備註 -->
+            <td>
+            </td>
+            {% else %}
+            <td> </td>
+            <th>第一拍</th>
+            <th>0.92</th>
+            <th>1.15</th>
+            <th>1.44</th>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            {% endif %}
+        </tr>
+        <!-- 第二拍 -->
+        <tr>
+            {% if pass %}
+            <!-- 拍別：第二拍 -->
+            <td></td>
+            <th>第二拍</th>
+            <th>1.15</th>
+            <th>1.44</th>
+            <th>1.80</th>
+            <!-- 第二拍：底價 -->
+            <td>
+            </td>
+            <!-- 第二拍：坪價 -->
+            <td>
+            </td>
+            <!-- 第二拍：時價 -->
+            <td>
+            </td>
+            <!-- 第二拍：CP值 -->
+            <td>
+            </td>
+            <!-- 第二拍：點閱 -->
+            <td>
+            </td>
+            <!-- 第二拍：監控 -->
+            <td>
+            </td>
+            <!-- 第二拍：建議加價 -->
+            <td>
+            </td>
+            <!-- 第二拍：保証金 -->
+            <td>
+            </td>
+            <!-- 第二拍：備註 -->
+            <td>
+            </td>
+            {% else %}
+            <td> </td>
+            <th>第二拍</th>
+            <th>1.15</th>
+            <th>1.44</th>
+            <th>1.80</th>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            {% endif %}
+        </tr>
+        <!-- 第三拍 -->
+        <tr>
+            {% if pass %}
+            <!-- 拍別：第三拍 -->
+            <td></td>
+            <th>第三拍</th>
+            <th>1.44</th>
+            <th>1.80</th>
+            <th>2.25</th>
+            <!-- 第三拍：底價 -->
+            <td>
+            </td>
+            <!-- 第三拍：坪價 -->
+            <td>
+            </td>
+            <!-- 第三拍：時價 -->
+            <td>
+            </td>
+            <!-- 第三拍：CP值 -->
+            <td>
+            </td>
+            <!-- 第三拍：點閱 -->
+            <td>
+            </td>
+            <!-- 第三拍：監控 -->
+            <td>
+            </td>
+            <!-- 第三拍：建議加價 -->
+            <td>
+            </td>
+            <!-- 第三拍：保証金 -->
+            <td>
+            </td>
+            <!-- 第三拍：備註 -->
+            <td>
+            </td>
+            {% else %}
+            <td> </td>
+            <th>第三拍</th>
+            <th>1.44</th>
+            <th>1.80</th>
+            <th>2.25</th>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            {% endif %}
+        </tr>
+        <!-- 第四拍 -->
+        <tr>
+            {% if pass %}
+            <!-- 拍別：第四拍 -->
+            <td></td>
+            <th>第四拍</th>
+            <th>1.80</th>
+            <th>2.25</th>
+            <th>2.81</th>
+            <!-- 第四拍：底價 -->
+            <td>
+            </td>
+            <!-- 第四拍：坪價 -->
+            <td>
+            </td>
+            <!-- 第四拍：時價 -->
+            <td>
+            </td>
+            <!-- 第四拍：CP值 -->
+            <td>
+            </td>
+            <!-- 第四拍：點閱 -->
+            <td>
+            </td>
+            <!-- 第四拍：監控 -->
+            <td>
+            </td>
+            <!-- 第四拍：建議加價 -->
+            <td>
+            </td>
+            <!-- 第四拍：保証金 -->
+            <td>
+            </td>
+            <!-- 第四拍：備註 -->
+            <td>
+            </td>
+            {% else %}
+            <td> </td>
+            <th>第四拍</th>
+            <th>1.80</th>
+            <th>2.25</th>
+            <th>2.81</th>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            {% endif %}
+        </tr>
+    </table>
+</div>
+<div class="attachment_field">
+    <table class="table">
+        <tr>
+            <th>初勘日</th>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <th>會勘日</th>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <th>法拍公告(證物三)</th>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <th>物件照片(證物四)</th>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <th>實價登錄市價</th>
+            <td>
+                <table>
+                    <tr>
+                        <th>附件</th>
+                        <th>地址</th>
+                        <th>總價(萬)</th>
+                        <th>建坪(坪)</th>
+                        <th>單價(萬)</th>
+                        <th>屋齡(年)</th>
+                        <th>單位</th>
+                        <th>樓高</th>
+                        <th>勘查員A</th>
+                        <th>加成A</th>
+                        <th>勘查員B</th>
+                        <th>加成B</th>
+                        <th>計算</th>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th>實價登錄地圖(證物五)</th>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <th>實價登錄照片(證物六)</th>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <th>法拍記錄(證物七)</th>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <th>備註</th>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <th>會勘決議</th>
+            <td>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="final_judgment_field">
+    <table class="table">
+        <tr>
+            <th>結論</th>
+            <th>區域負責人</th>
+            <th>副署人員1</th>
+            <th>副署人員2</th>
+            <th>副署人員3</th>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+{{instance.auctionday}}<br>
+{{instance.auctionlevel}}<br>
+{{instance.floorprice}}<br>
+{{instance.margin}}<br>
+
+<a href="/">返回首頁</a>
+<a href="edit/" class="btn btn-success btn-sm">更新</a>
+{% endblock content %}
+
+
+
