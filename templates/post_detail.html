@@ -1,9 +1,11 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
+{% load humanize %}
 {% block head_list %}
 {{title}}
 {% endblock head_list %}
 {% block content %}
 <h1>{{title}} YF評量表</h1>
+
 <div class="casenumber_field">
     <table class="table">
         <tr>
@@ -89,18 +91,22 @@
         </tr>
         <!-- 第一拍 -->
         <tr>
-            {% if pass %}
+            {% if instance.auctionlevel == "第一拍" %}
             <!-- 拍別：第一拍 -->
-            <td></td>
+            <td>
+                {{instance.auctionday}}
+            </td>
             <th>第一拍</th>
             <th>0.92</th>
             <th>1.15</th>
             <th>1.44</th>
             <!-- 第一拍：底價 -->
             <td>
+                {{ instance.floorprice|intcomma:False }}
             </td>
             <!-- 第一拍：坪價 -->
             <td>
+                {{ instance.get_ping|intcomma:False }}
             </td>
             <!-- 第一拍：時價 -->
             <td>
@@ -119,6 +125,7 @@
             </td>
             <!-- 第一拍：保証金 -->
             <td>
+                {{instance.margin|intcomma:False}}
             </td>
             <!-- 第一拍：備註 -->
             <td>
@@ -423,12 +430,6 @@
         </tr>
     </table>
 </div>
-
-
-{{instance.auctionday}}<br>
-{{instance.auctionlevel}}<br>
-{{instance.floorprice}}<br>
-{{instance.margin}}<br>
 
 <a href="/">返回首頁</a>
 <a href="edit/" class="btn btn-success btn-sm">更新</a>

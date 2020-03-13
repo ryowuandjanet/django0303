@@ -2,11 +2,18 @@ from datetime import date
 from django.db import models
 from django.urls import reverse
 
+
 class PostModel(models.Model):
+	AUCTIONLEVEL_LIST=(
+		('第一拍','第一拍'),
+		('第二拍','第二拍'),
+		('第三拍','第三拍'),
+		('第四拍','第四拍'),		
+	)
 	casenumber=models.CharField(u'案號',max_length=100)
 	address=models.CharField(u'住址',max_length=100)
 	auctionday=models.DateField(u'拍賣日',default=date.today)
-	auctionlevel=models.CharField(u'拍賣次數',max_length=5)
+	auctionlevel=models.CharField(u'拍賣次數',choices=AUCTIONLEVEL_LIST,max_length=5)
 	floorprice=models.IntegerField(u'底價')
 	margin=models.IntegerField(u'保証金')
 	creditor=models.CharField(u'債務人',max_length=100)
@@ -17,6 +24,10 @@ class PostModel(models.Model):
 
 	def get_absolute_url(self):
 		return reverse("posts:detail",kwargs={"id": self.id})
+
+	def get_ping(self):
+		return self.floorprice * self.margin
+
 
 class BuildModel(models.Model):
 	CLASS_LIST=(
@@ -57,3 +68,6 @@ class BuildModel(models.Model):
 
 	def __str__(self):
 		return self.buildnumber
+
+ 
+

@@ -15,16 +15,4 @@ class PostForm(forms.ModelForm):
 			"debtor"
 		]
 
-class BuildForm(forms.ModelForm):
-	class Meta:
-		model=BuildModel
-		fields=[
-			"postmodel",
-			"buildnumber",
-			"buildarea",
-			"buildurl",
-			"buildholdingpointperson",
-			"buildholdingpointall",
-			"buildtype",
-			"usearea"
-		]
+
